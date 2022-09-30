@@ -3,8 +3,11 @@ import PropertyBar from "./components/PropertyBar";
 import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import Add from "./components/Add";
+import Add2 from "./components/Add2";
 import Typography from "@mui/material/Typography";
 import Cards from "./components/Card";
+import TryOlx from "./components/TryOlx";
+
 import { useState } from "react";
 
 const Wrapper = styled.div`
@@ -101,6 +104,8 @@ function App() {
     },
   ];
 
+  let [cardState, setCardState] = useState();
+
   let filterCards = (filterCriteria) => {
     adsData.filter((x) => x.addTitle.includes(filterCriteria));
     setCardStatus([...filterCards]);
@@ -151,6 +156,14 @@ function App() {
       </Wrapper>
 
       <Wrapper>{cardStatus}</Wrapper>
+
+      <div>
+        <Add2 />
+      </div>
+
+      <div>
+        <TryOlx />
+      </div>
     </div>
   );
 }

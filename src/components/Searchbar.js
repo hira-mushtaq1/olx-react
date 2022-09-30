@@ -4,7 +4,6 @@ import "../App.css";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Link from "@mui/material/Link";
 import AddIcon from "@mui/icons-material/Add";

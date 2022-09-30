@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
 `;
-function Navbar() {
+function Navbar({ func, data }) {
   return (
     <div>
       <Wrapper>
