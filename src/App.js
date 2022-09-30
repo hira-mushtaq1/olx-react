@@ -104,7 +104,7 @@ function App() {
     },
   ];
 
-  let [cardState, setCardState] = useState();
+  // let [cardState, setCardState] = useState()
 
   let filterCards = (filterCriteria) => {
     adsData.filter((x) => x.addTitle.includes(filterCriteria));
