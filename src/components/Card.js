@@ -8,7 +8,7 @@ import { CardActionArea } from "@mui/material";
 function Cards({ addTitle, price, location, city, imgSrc }) {
   return (
     <div>
-      <Card sx={{ minWidth: 304, minHeight: 285, margin: "5px" }}>
+      <Card sx={{ width: 304, height: 285, margin: "5px" }}>
         <CardActionArea>
           <CardMedia component="img" height="148" width="304" image={imgSrc} />
           <CardContent style={{ borderLeft: "6px solid #ffce32" }}>
@@ -17,7 +17,7 @@ function Cards({ addTitle, price, location, city, imgSrc }) {
               style={{ marginBottom: "15px" }}
               gutterBottom
               variant="subtitle2"
-              component="div"
+              component="p"
             >
               {addTitle}
             </Typography>

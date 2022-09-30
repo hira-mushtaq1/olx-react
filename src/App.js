@@ -5,14 +5,15 @@ import Navbar from "./components/Navbar";
 import Add from "./components/Add";
 import Typography from "@mui/material/Typography";
 import Cards from "./components/Card";
+import { useState } from "react";
+
+const Wrapper = styled.div`
+  padding: 0px 120px 0px 120px;
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 function App() {
-  const Wrapper = styled.div`
-    padding: 0px 120px 0px 120px;
-    display: flex;
-    flex-wrap: wrap;
-  `;
-
   const adsData = [
     {
       addTitle: "OnePlus 9 Pro 5G",
@@ -99,11 +100,31 @@ function App() {
       imgSrc: "https://images.olx.com.pk/thumbnails/288868974-240x180.webp",
     },
   ];
+
+  let filterCards = (filterCriteria) => {
+    adsData.filter((x) => x.addTitle.includes(filterCriteria));
+    setCardStatus([...filterCards]);
+    console.log("running...");
+  };
+
+  let [cardStatus, setCardStatus] = useState([]);
+  cardStatus = adsData.map((v, i) => (
+    <Cards
+      addTitle={v.addTitle}
+      price={v.price}
+      location={v.location}
+      city={v.city}
+      imgSrc={v.imgSrc}
+      key={i}
+    />
+  ));
+
   return (
     <div>
       <div
         style={{
           backgroundColor: "#f7f8f8",
+          width: "100%",
         }}
       >
         <Wrapper style={{ marginBottom: 20 }}>
@@ -129,17 +150,7 @@ function App() {
         </Typography>
       </Wrapper>
 
-      <Wrapper>
-        {adsData.map((v, i) => (
-          <Cards
-            addTitle={v.addTitle}
-            price={v.price}
-            location={v.location}
-            city={v.city}
-            imgSrc={v.imgSrc}
-          />
-        ))}
-      </Wrapper>
+      <Wrapper>{cardStatus}</Wrapper>
     </div>
   );
 }

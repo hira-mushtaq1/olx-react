@@ -5,3 +5,7 @@ body{
 .headBtns:hover{
     color: blue;
 }
+
+.searchBar{
+    width: calc(100% - 100px);
+}
